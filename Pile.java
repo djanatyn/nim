@@ -4,16 +4,16 @@ public class Pile
 
     public Pile(int marbles)
     {
-	numMarbles = marbles;
+        numMarbles = marbles;
     }
 
     public int getMarbles()
     {
-	return numMarbles;
+        return numMarbles;
     }
 
     public void removeMarbles(int marbles)
     {
-	numMarbles -= marbles;
+        numMarbles -= marbles;
     }
 }
