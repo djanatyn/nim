@@ -11,6 +11,7 @@ public class Nim
     public static void startGame()
     {
         Scanner in = new Scanner(System.in);
+	Random generator = new Random();
         int numPlayers = 1;
         Boolean smartComputer = true;
 	Boolean twoPlayer = false;
@@ -32,14 +33,15 @@ public class Nim
         } else if (choice.toLowerCase().equals("c")) {
             numPlayers = 2;
             System.out.println("Starting with two players.");
-	    twoPlayer = false;
+	    twoPlayer = true;
         } else {
             System.out.println("Error - please enter a, b, or c.");
             Nim.startGame();
         }
 	
-	System.out.println("Number of marbles?");
-	int numMarbles = in.nextInt();
+	int numMarbles = generator.nextInt(90) + 10;
+	System.out.println("Playing with " + numMarbles + " marbles.");
+
 	if (twoPlayer) {
 	    twoPlayerGame(numMarbles);
 	} else {
